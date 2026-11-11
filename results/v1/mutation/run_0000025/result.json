@@ -1,0 +1,11 @@
+{
+  "touchdown_vz_mps": null,
+  "miss_m": 0.16749315169510834,
+  "valid": true,
+  "flight_time_s": 209.99,
+  "landed": false,
+  "fuel_remaining_kg": 67.2276322197305,
+  "error": "",
+  "touchdown_tilt_deg": null,
+  "touchdown_vh_mps": null
+}

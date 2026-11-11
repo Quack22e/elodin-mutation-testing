@@ -1,0 +1,114 @@
+[
+  {
+    "name": "finite",
+    "ok": true,
+    "value": 2.220446049250313e-16,
+    "limit": 1e-09,
+    "detail": "max | |q|-1 |",
+    "headroom": 2.2204460492503128e-07
+  },
+  {
+    "name": "newton",
+    "ok": true,
+    "value": 3.9591898005413373e-13,
+    "limit": 1e-06,
+    "detail": "max residual m/s^2 at t=7.25s",
+    "headroom": 3.9591898005413374e-07
+  },
+  {
+    "name": "mass_bookkeeping",
+    "ok": true,
+    "value": 4.547473508864641e-13,
+    "limit": 1e-06,
+    "detail": "dry-mass drift kg (prop rise 0.00e+00, min 67.23)",
+    "headroom": 4.547473508864641e-07
+  },
+  {
+    "name": "mass_flow",
+    "ok": true,
+    "value": 1.0084198568180323,
+    "limit": 1.0121010101010102,
+    "detail": "used/predicted, band [0.9881, 1.0121]",
+    "headroom": 0.9963628597874726
+  },
+  {
+    "name": "engine_model",
+    "ok": true,
+    "value": 7126.145124928633,
+    "limit": 7154.0,
+    "detail": "thrust/throttle N, band [6846, 7154]",
+    "headroom": 0.9961063915192386
+  },
+  {
+    "name": "engine_response",
+    "ok": true,
+    "value": 0.10356089541437047,
+    "limit": 0.12024,
+    "detail": "identified tau s, band [0.080, 0.120]",
+    "headroom": 0.8612848920024158
+  },
+  {
+    "name": "attitude_envelope",
+    "ok": true,
+    "value": 26.473786076530445,
+    "limit": 45.0,
+    "detail": "max tilt deg (max rate 5.3 deg/s)",
+    "headroom": 0.5883063572562321
+  },
+  {
+    "name": "attitude_tracking",
+    "ok": true,
+    "value": 3.0790485559104352,
+    "limit": 10.0,
+    "detail": "max setpoint error deg",
+    "headroom": 0.3079048555910435
+  },
+  {
+    "name": "nav_residual",
+    "ok": true,
+    "value": 4.112605645585022,
+    "limit": 6.0,
+    "detail": "max |nav-truth|/sigma on vy",
+    "headroom": 0.6854342742641704
+  },
+  {
+    "name": "command_latency",
+    "ok": true,
+    "value": 0.0,
+    "limit": 0.050000001,
+    "detail": "max command age s",
+    "headroom": 0.0
+  },
+  {
+    "name": "thrust_magnitude",
+    "ok": true,
+    "value": 1.0356423105583026,
+    "limit": 1.0504,
+    "detail": "median delivered/commanded, band [0.950, 1.050]",
+    "headroom": 0.9859504098993741
+  },
+  {
+    "name": "thrust_direction",
+    "ok": true,
+    "value": 1.1253960387025106,
+    "limit": 6.0,
+    "detail": "p95 direction error deg",
+    "headroom": 0.18756600645041843
+  },
+  {
+    "name": "initial_state",
+    "ok": true,
+    "value": 0.0,
+    "limit": 0.5,
+    "detail": "outside envelope: none",
+    "headroom": 0.0
+  },
+  {
+    "name": "landing",
+    "ok": false,
+    "value": 1.0,
+    "limit": 0.5,
+    "detail": "no touchdown",
+    "headroom": 2.0
+  }
+]

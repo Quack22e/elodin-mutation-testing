@@ -1,0 +1,125 @@
+{
+  "clean_runs": 40,
+  "false_positives": 0,
+  "false_positive_checks": {},
+  "clean_review": 0,
+  "seeded_runs": 0,
+  "inconclusive_runs": 0,
+  "must_catch": {
+    "runs": 0,
+    "caught": 0,
+    "review": 0,
+    "false_negatives": 0
+  },
+  "should_catch": {
+    "runs": 0,
+    "caught": 0,
+    "review": 0,
+    "missed": 0
+  },
+  "may_escape": {
+    "runs": 0,
+    "caught": 0,
+    "identical_to_twin": 0
+  },
+  "must_be_equivalent": {
+    "runs": 0,
+    "confirmed": 0,
+    "violated": 0
+  },
+  "all_seeded_excluding_equivalent": {
+    "runs": 0,
+    "caught": 0
+  },
+  "variants": {},
+  "kills_by_check": {
+    "finite": 0,
+    "newton": 0,
+    "mass_bookkeeping": 0,
+    "mass_flow": 0,
+    "engine_model": 0,
+    "engine_response": 0,
+    "attitude_envelope": 0,
+    "attitude_tracking": 0,
+    "nav_residual": 0,
+    "command_latency": 0,
+    "thrust_magnitude": 0,
+    "thrust_direction": 0,
+    "initial_state": 0,
+    "landing": 0
+  },
+  "unique_kills_by_check": {
+    "finite": 0,
+    "newton": 0,
+    "mass_bookkeeping": 0,
+    "mass_flow": 0,
+    "engine_model": 0,
+    "engine_response": 0,
+    "attitude_envelope": 0,
+    "attitude_tracking": 0,
+    "nav_residual": 0,
+    "command_latency": 0,
+    "thrust_magnitude": 0,
+    "thrust_direction": 0,
+    "initial_state": 0,
+    "landing": 0
+  },
+  "clean_check_ranges": {
+    "finite": {
+      "min": 2.220446049250313e-16,
+      "max": 3.3306690738754696e-16
+    },
+    "newton": {
+      "min": 3.8452202359299346e-13,
+      "max": 3.9696186510073443e-13
+    },
+    "mass_bookkeeping": {
+      "min": 0.0,
+      "max": 4.547473508864641e-13
+    },
+    "mass_flow": {
+      "min": 0.9904796088425252,
+      "max": 1.0099381510750975
+    },
+    "engine_model": {
+      "min": 6863.489326878777,
+      "max": 7139.810756257144
+    },
+    "engine_response": {
+      "min": 0.08094468109510794,
+      "max": 0.11900409360338512
+    },
+    "attitude_envelope": {
+      "min": 17.431199666408553,
+      "max": 27.08506781128988
+    },
+    "attitude_tracking": {
+      "min": 2.538060579838275,
+      "max": 5.686351904767745
+    },
+    "nav_residual": {
+      "min": 3.6927703914771826,
+      "max": 4.71343949748341
+    },
+    "command_latency": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "thrust_magnitude": {
+      "min": 0.9709837258362572,
+      "max": 1.0233821382612074
+    },
+    "thrust_direction": {
+      "min": 1.4111714744262502,
+      "max": 2.3248960879085585
+    },
+    "initial_state": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "landing": {
+      "min": 0.0,
+      "max": 0.0
+    }
+  }
+}

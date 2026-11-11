@@ -1,0 +1,1062 @@
+{
+  "clean_runs": 40,
+  "false_positives": 0,
+  "false_positive_checks": {},
+  "clean_review": 0,
+  "seeded_runs": 2000,
+  "inconclusive_runs": 0,
+  "must_catch": {
+    "runs": 1500,
+    "caught": 1500,
+    "review": 0,
+    "false_negatives": 0
+  },
+  "should_catch": {
+    "runs": 160,
+    "caught": 160,
+    "review": 0,
+    "missed": 0
+  },
+  "may_escape": {
+    "runs": 300,
+    "caught": 66,
+    "identical_to_twin": 0
+  },
+  "must_be_equivalent": {
+    "runs": 40,
+    "confirmed": 40,
+    "violated": 0
+  },
+  "all_seeded_excluding_equivalent": {
+    "runs": 1960,
+    "caught": 1726
+  },
+  "variants": {
+    "gravity_earth": {
+      "layer": "param",
+      "description": "Gravity constant set to Earth's 9.81 m/s^2 instead of the Moon's",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40,
+        "landing": 40
+      }
+    },
+    "gravity_scale@0.005": {
+      "layer": "param",
+      "description": "Gravity constant off by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40
+      }
+    },
+    "gravity_scale@0.02": {
+      "layer": "param",
+      "description": "Gravity constant off by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40
+      }
+    },
+    "gravity_scale@0.1": {
+      "layer": "param",
+      "description": "Gravity constant off by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40,
+        "landing": 22
+      }
+    },
+    "isp_low@0.005": {
+      "layer": "param",
+      "description": "Engine Isp low by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 40
+      },
+      "caught": 6,
+      "caught_by_requirement": {
+        "may_escape": 6
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_flow": 6
+      }
+    },
+    "isp_low@0.01": {
+      "layer": "param",
+      "description": "Engine Isp low by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 30,
+        "must_catch": 10
+      },
+      "caught": 16,
+      "caught_by_requirement": {
+        "must_catch": 10,
+        "may_escape": 6
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_flow": 16
+      }
+    },
+    "isp_low@0.02": {
+      "layer": "param",
+      "description": "Engine Isp low by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 10,
+        "must_catch": 30
+      },
+      "caught": 36,
+      "caught_by_requirement": {
+        "may_escape": 6,
+        "must_catch": 30
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_flow": 36
+      }
+    },
+    "isp_low@0.05": {
+      "layer": "param",
+      "description": "Engine Isp low by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_flow": 40
+      }
+    },
+    "isp_low@0.2": {
+      "layer": "param",
+      "description": "Engine Isp low by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_flow": 40
+      }
+    },
+    "thrust_lbf": {
+      "layer": "param",
+      "description": "Max thrust copied from a datasheet in lbf, used as N",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "engine_model": 40,
+        "thrust_magnitude": 40,
+        "landing": 40
+      }
+    },
+    "thrust_scale@-0.02": {
+      "layer": "param",
+      "description": "Engine thrust off by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 25,
+        "must_catch": 15
+      },
+      "caught": 18,
+      "caught_by_requirement": {
+        "must_catch": 15,
+        "may_escape": 3
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "engine_model": 18,
+        "thrust_magnitude": 1
+      }
+    },
+    "thrust_scale@-0.05": {
+      "layer": "param",
+      "description": "Engine thrust off by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "engine_model": 40,
+        "thrust_magnitude": 21,
+        "landing": 6
+      }
+    },
+    "thrust_scale@-0.1": {
+      "layer": "param",
+      "description": "Engine thrust off by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "engine_model": 40,
+        "thrust_magnitude": 40,
+        "landing": 31
+      }
+    },
+    "thrust_scale@0.1": {
+      "layer": "param",
+      "description": "Engine thrust off by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "engine_model": 40,
+        "thrust_magnitude": 40
+      }
+    },
+    "dry_mass_lb": {
+      "layer": "param",
+      "description": "Dry mass entered in pounds, used as kilograms",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "thrust_magnitude": 40,
+        "initial_state": 40,
+        "landing": 40
+      }
+    },
+    "propellant_short@0.02": {
+      "layer": "param",
+      "description": "Propellant load short by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 34,
+        "must_catch": 6
+      },
+      "caught": 8,
+      "caught_by_requirement": {
+        "may_escape": 2,
+        "must_catch": 6
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "initial_state": 8
+      }
+    },
+    "propellant_short@0.1": {
+      "layer": "param",
+      "description": "Propellant load short by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "initial_state": 40
+      }
+    },
+    "propellant_short@0.3": {
+      "layer": "param",
+      "description": "Propellant load short by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "initial_state": 40
+      }
+    },
+    "propellant_short@0.6": {
+      "layer": "param",
+      "description": "Propellant load short by the given fraction",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "initial_state": 40,
+        "landing": 40
+      }
+    },
+    "tilt_deg_as_rad": {
+      "layer": "param",
+      "description": "Initial tilt in degrees passed where radians are expected",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 39,
+        "may_escape": 1
+      },
+      "caught": 39,
+      "caught_by_requirement": {
+        "must_catch": 39
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "attitude_envelope": 36,
+        "initial_state": 39,
+        "attitude_tracking": 14,
+        "landing": 8
+      }
+    },
+    "vz_sign": {
+      "layer": "param",
+      "description": "Initial vertical velocity sign flipped (climbing)",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "initial_state": 40,
+        "landing": 11
+      }
+    },
+    "mass_flow_dt": {
+      "layer": "param",
+      "description": "Propellant integration uses a 50 Hz step in a 100 Hz sim",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_flow": 40,
+        "landing": 11
+      }
+    },
+    "inertia_x10": {
+      "layer": "param",
+      "description": "Inertia tensor 10x too large (g*cm^2 / kg*m^2 style slip)",
+      "runs": 40,
+      "requirements": {
+        "should_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "should_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "attitude_tracking": 40,
+        "thrust_direction": 40,
+        "landing": 39
+      }
+    },
+    "site_offset@100": {
+      "layer": "param",
+      "description": "Landing-site coordinates off by the given metres downrange",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "landing": 40
+      }
+    },
+    "thrust_world_frame": {
+      "layer": "model",
+      "description": "Thrust applied along world +Z instead of body +Z",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40,
+        "landing": 40
+      }
+    },
+    "mass_not_updated": {
+      "layer": "model",
+      "description": "Propellant burns but the rigid-body mass never changes",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_bookkeeping": 40,
+        "thrust_magnitude": 11
+      }
+    },
+    "gravity_twice": {
+      "layer": "model",
+      "description": "Gravity effector composed into the system twice",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40,
+        "landing": 40
+      }
+    },
+    "gravity_sign": {
+      "layer": "model",
+      "description": "Gravity applied upward",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40,
+        "landing": 40
+      }
+    },
+    "rcs_torque_sign": {
+      "layer": "model",
+      "description": "Attitude-control torque sign flipped",
+      "runs": 40,
+      "requirements": {
+        "should_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "should_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "attitude_envelope": 40,
+        "attitude_tracking": 40,
+        "thrust_direction": 40,
+        "landing": 40
+      }
+    },
+    "throttle_unclamped": {
+      "layer": "model",
+      "description": "Engine model no longer clamps the throttle command",
+      "runs": 40,
+      "requirements": {
+        "must_be_equivalent": 40
+      },
+      "caught": 0,
+      "caught_by_requirement": {},
+      "review": 0,
+      "identical_to_twin": 40,
+      "false_negatives": 0,
+      "checks": {}
+    },
+    "centrifugal_sign": {
+      "layer": "model",
+      "description": "Centrifugal relief term added to gravity instead of subtracted",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "newton": 40
+      }
+    },
+    "engine_lag@1.5": {
+      "layer": "model",
+      "description": "Engine throttle time constant multiplied by the given factor",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "engine_response": 40
+      }
+    },
+    "engine_lag@10": {
+      "layer": "model",
+      "description": "Engine throttle time constant multiplied by the given factor",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "engine_response": 40
+      }
+    },
+    "mdot_lunar_g": {
+      "layer": "model",
+      "description": "Mass flow uses local lunar g instead of g0 in T/(Isp*g)",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "mass_flow": 40,
+        "landing": 40
+      }
+    },
+    "quat_wxyz": {
+      "layer": "fsw",
+      "description": "Attitude command sent scalar-first (w,x,y,z) to a scalar-last interface",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "attitude_envelope": 40,
+        "attitude_tracking": 40,
+        "thrust_direction": 40,
+        "landing": 40
+      }
+    },
+    "quat_conjugate": {
+      "layer": "fsw",
+      "description": "Attitude command sent as the inverse rotation",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "attitude_envelope": 40,
+        "thrust_direction": 40,
+        "landing": 40
+      }
+    },
+    "fsw_gravity_earth": {
+      "layer": "fsw",
+      "description": "Guidance compensates for Earth gravity",
+      "runs": 40,
+      "requirements": {
+        "should_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "should_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "landing": 40
+      }
+    },
+    "crossrange_sign": {
+      "layer": "fsw",
+      "description": "Crossrange (y) guidance acceleration sign flipped",
+      "runs": 40,
+      "requirements": {
+        "should_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "should_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "landing": 40
+      }
+    },
+    "mass_estimate_dry": {
+      "layer": "fsw",
+      "description": "Guidance mass estimate omits remaining propellant",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "thrust_magnitude": 40,
+        "landing": 36
+      }
+    },
+    "stale_command@1": {
+      "layer": "fsw",
+      "description": "Commands applied the given number of guidance cycles late",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 40
+      },
+      "caught": 0,
+      "caught_by_requirement": {},
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {}
+    },
+    "stale_command@2": {
+      "layer": "fsw",
+      "description": "Commands applied the given number of guidance cycles late",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "command_latency": 40
+      }
+    },
+    "stale_command@10": {
+      "layer": "fsw",
+      "description": "Commands applied the given number of guidance cycles late",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "command_latency": 40
+      }
+    },
+    "altimeter_feet": {
+      "layer": "sensor",
+      "description": "Altimeter driver reports feet as metres",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "nav_residual": 40,
+        "landing": 40
+      }
+    },
+    "altimeter_bias@0.5": {
+      "layer": "sensor",
+      "description": "Altimeter reads high by the given metres",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 40
+      },
+      "caught": 0,
+      "caught_by_requirement": {},
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {}
+    },
+    "altimeter_bias@1": {
+      "layer": "sensor",
+      "description": "Altimeter reads high by the given metres",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 40
+      },
+      "caught": 3,
+      "caught_by_requirement": {
+        "may_escape": 3
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "nav_residual": 3
+      }
+    },
+    "altimeter_bias@2": {
+      "layer": "sensor",
+      "description": "Altimeter reads high by the given metres",
+      "runs": 40,
+      "requirements": {
+        "may_escape": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "may_escape": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "nav_residual": 40
+      }
+    },
+    "altimeter_bias@10": {
+      "layer": "sensor",
+      "description": "Altimeter reads high by the given metres",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "nav_residual": 40
+      }
+    },
+    "altimeter_bias@50": {
+      "layer": "sensor",
+      "description": "Altimeter reads high by the given metres",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "nav_residual": 40,
+        "landing": 23
+      }
+    },
+    "velocity_xy_swap": {
+      "layer": "sensor",
+      "description": "Horizontal velocity axes swapped in the nav message",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "attitude_envelope": 40,
+        "nav_residual": 40,
+        "landing": 40
+      }
+    },
+    "altimeter_stuck@100": {
+      "layer": "sensor",
+      "description": "Altimeter freezes once below the given metres",
+      "runs": 40,
+      "requirements": {
+        "must_catch": 40
+      },
+      "caught": 40,
+      "caught_by_requirement": {
+        "must_catch": 40
+      },
+      "review": 0,
+      "identical_to_twin": 0,
+      "false_negatives": 0,
+      "checks": {
+        "nav_residual": 40,
+        "landing": 20
+      }
+    }
+  },
+  "kills_by_check": {
+    "finite": 0,
+    "newton": 320,
+    "mass_bookkeeping": 40,
+    "mass_flow": 218,
+    "engine_model": 178,
+    "engine_response": 80,
+    "attitude_envelope": 196,
+    "attitude_tracking": 134,
+    "nav_residual": 243,
+    "command_latency": 80,
+    "thrust_magnitude": 233,
+    "thrust_direction": 160,
+    "initial_state": 247,
+    "landing": 847
+  },
+  "unique_kills_by_check": {
+    "finite": 0,
+    "newton": 138,
+    "mass_bookkeeping": 29,
+    "mass_flow": 167,
+    "engine_model": 36,
+    "engine_response": 80,
+    "attitude_envelope": 0,
+    "attitude_tracking": 0,
+    "nav_residual": 120,
+    "command_latency": 80,
+    "thrust_magnitude": 4,
+    "thrust_direction": 0,
+    "initial_state": 120,
+    "landing": 120
+  },
+  "clean_check_ranges": {
+    "finite": {
+      "min": 2.220446049250313e-16,
+      "max": 3.3306690738754696e-16
+    },
+    "newton": {
+      "min": 3.851190136159707e-13,
+      "max": 3.960142086809973e-13
+    },
+    "mass_bookkeeping": {
+      "min": 0.0,
+      "max": 4.547473508864641e-13
+    },
+    "mass_flow": {
+      "min": 0.9903381131740164,
+      "max": 1.0099810193921803
+    },
+    "engine_model": {
+      "min": 6861.749715896033,
+      "max": 7134.640463567748
+    },
+    "engine_response": {
+      "min": 0.08091172977715398,
+      "max": 0.119613449023671
+    },
+    "attitude_envelope": {
+      "min": 16.384288364353313,
+      "max": 26.797349696517443
+    },
+    "attitude_tracking": {
+      "min": 2.6923821598861766,
+      "max": 4.839194124617042
+    },
+    "nav_residual": {
+      "min": 3.781046954112867,
+      "max": 5.152325292075588
+    },
+    "command_latency": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "thrust_magnitude": {
+      "min": 0.9695078833413564,
+      "max": 1.0351601523405676
+    },
+    "thrust_direction": {
+      "min": 1.4627620347855312,
+      "max": 2.0987937866849653
+    },
+    "initial_state": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "landing": {
+      "min": 0.0,
+      "max": 0.0
+    }
+  }
+}

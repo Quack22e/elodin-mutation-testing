@@ -1,0 +1,27 @@
+# Run from the repository root:
+#   elodin monte-carlo run sim/main.py --campaign campaigns/campaign.toml --spec campaigns/clean.toml --out dbs/clean
+# or, where the elodin CLI can't start (macOS without Homebrew ffmpeg):
+#   python harness/mc.py run sim/main.py --campaign campaigns/campaign.toml --spec campaigns/clean.toml --out dbs/clean
+timeout = "120s"
+retries = 0
+continue_on_error = true
+
+# Static per-worker port plan: worker w uses base + w * port_stride.
+# (db_port + 1 is reserved for elodin-db's asset server.)
+[resources]
+db_port = 2440
+port_stride = 10
+
+[resources.ports]
+state = 9103
+command = 9102
+
+[retention]
+# The sim keeps its own flight recorder (telemetry.npz); the per-run Elodin
+# DB is not needed for scoring. The score hook keeps telemetry only for runs
+# worth a second look (false positives and escaped faults).
+keep_run_db = "never"
+
+[hooks]
+post_run = "campaigns/hooks/score.py"
+post_campaign = "campaigns/hooks/report.py"

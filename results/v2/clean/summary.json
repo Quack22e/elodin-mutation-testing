@@ -1,0 +1,10 @@
+{
+  "total": 200,
+  "passed": 200,
+  "failed": 0,
+  "invalid": 0,
+  "workers": 8,
+  "wall_time_s": 133.87,
+  "mean_run_wall_s": 4.178,
+  "runner": "harness/mc.py"
+}

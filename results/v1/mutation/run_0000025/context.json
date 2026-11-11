@@ -1,0 +1,33 @@
+{
+  "run_id": "run_0000025",
+  "seed": 26,
+  "db_path": "dbs/mutation/runs/run_0000025/db",
+  "db_addr": "127.0.0.1:2460",
+  "run_dir": "dbs/mutation/runs/run_0000025",
+  "params": {
+    "dry_mass_kg": 1226.4549233759956,
+    "engine_tau_s": 0.1035608954143704,
+    "init_altitude_m": 1551.7597305672368,
+    "init_tilt_deg": 21.315757193994095,
+    "init_vx_mps": 49.14279017943913,
+    "init_vy_mps": -0.43297938590352714,
+    "init_vz_mps": -23.406601391790016,
+    "init_x_m": -1758.2589479785424,
+    "init_y_m": -10.363285071026546,
+    "isp_s": 312.36989024983563,
+    "noise_seed": 798060711.2989784,
+    "propellant_kg": 233.28930823415547,
+    "thrust_scale": 1.0180207321326618
+  },
+  "meta": {
+    "fault": "none"
+  },
+  "slots": {
+    "worker_id": 2,
+    "db_port": 2460,
+    "ports": {
+      "state": 9123,
+      "command": 9122
+    }
+  }
+}

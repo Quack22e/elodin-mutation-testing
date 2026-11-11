@@ -1,0 +1,105 @@
+{
+  "clean_runs": 200,
+  "false_positives": 0,
+  "false_positives_by_check": {},
+  "clean_check_ranges": {
+    "finite": {
+      "min": 2.220446049250313e-16,
+      "max": 3.3306690738754696e-16
+    },
+    "newton": {
+      "min": 3.8563733651755943e-13,
+      "max": 3.9690807167842133e-13
+    },
+    "mass_bookkeeping": {
+      "min": 0.0,
+      "max": 4.547473508864641e-13
+    },
+    "mass_flow": {
+      "min": 0.9901941680495893,
+      "max": 1.0100774730893836
+    },
+    "engine_model": {
+      "min": 6860.643450051915,
+      "max": 7138.654649929163
+    },
+    "engine_response": {
+      "min": 0.08009467394441133,
+      "max": 0.11988519307445646
+    },
+    "attitude_envelope": {
+      "min": 15.974684714785461,
+      "max": 27.516696497824025
+    },
+    "attitude_tracking": {
+      "min": 2.320641525668942,
+      "max": 5.662042310358412
+    },
+    "nav_residual": {
+      "min": 3.612279936610392,
+      "max": 4.961893200764052
+    },
+    "command_latency": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "thrust_magnitude": {
+      "min": 0.9665384216085229,
+      "max": 1.034738064098324
+    },
+    "thrust_direction": {
+      "min": 1.2879481520555016,
+      "max": 2.311098730425387
+    },
+    "initial_state": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "landing": {
+      "min": 0.0,
+      "max": 0.0
+    }
+  },
+  "seeded_runs": 0,
+  "equivalent_runs": 0,
+  "scoreable_runs": 0,
+  "caught_runs": 0,
+  "crashed_runs": 0,
+  "escaped_runs": 0,
+  "catch_rate": null,
+  "variants": {},
+  "variant_status": {},
+  "kills_by_check": {
+    "finite": 0,
+    "newton": 0,
+    "mass_bookkeeping": 0,
+    "mass_flow": 0,
+    "engine_model": 0,
+    "engine_response": 0,
+    "attitude_envelope": 0,
+    "attitude_tracking": 0,
+    "nav_residual": 0,
+    "command_latency": 0,
+    "thrust_magnitude": 0,
+    "thrust_direction": 0,
+    "initial_state": 0,
+    "landing": 0
+  },
+  "unique_kills_by_check": {
+    "finite": 0,
+    "newton": 0,
+    "mass_bookkeeping": 0,
+    "mass_flow": 0,
+    "engine_model": 0,
+    "engine_response": 0,
+    "attitude_envelope": 0,
+    "attitude_tracking": 0,
+    "nav_residual": 0,
+    "command_latency": 0,
+    "thrust_magnitude": 0,
+    "thrust_direction": 0,
+    "initial_state": 0,
+    "landing": 0
+  },
+  "layers": {}
+}
