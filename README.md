@@ -235,9 +235,3 @@ results/    v1/, v2/, v2-cli/ reports
   components.
 - `apollo-lander` was studied for its structure but not run. Pointing this
   harness at it is the obvious next step.
-
-## How it was built
-
-Built with [Claude Code](https://claude.com/claude-code). I directed the
-project and brought the testing method from my Aptio work. Claude wrote most of
-the code, ran the campaigns and drafted this README.
