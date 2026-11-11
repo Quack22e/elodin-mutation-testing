@@ -1,6 +1,6 @@
-# Breaking an Elodin sim on purpose: do the checks notice?
+# Breaking an Elodin sim on purpose:
 
-The suggestion was: *build your own project with Elodin, start from the
+The email suggestion was to *build your own project with Elodin, start from the
 `monte-carlo` example, look at `apollo-lander`, then point a mutation-testing
 habit at a sim: break parameters on purpose and see whether your checks catch
 it.*
@@ -8,12 +8,10 @@ it.*
 This repo does that. **Kestrel** is a 6-DOF lunar-lander sim built with
 [Elodin](https://github.com/elodin-sys/elodin). Its flight software runs as a
 separate software-in-the-loop (SITL) process, and every campaign runs through
-the official `elodin monte-carlo run`. I seeded 50 realistic faults on
-purpose: wrong units, wrong constants, physics bugs, flight-software bugs and
+the official `elodin monte-carlo run`. I intentionally seeded 50 realistic faults including 
+wrong units, wrong constants, physics bugs, flight-software bugs and
 sensor faults. Each was flown across 40 dispersed flights, and 14 independent
 checks decided which flights were broken.
-
-## The answer
 
 | | Caught by the checks |
 |---|---:|
@@ -22,23 +20,23 @@ checks decided which flights were broken.
 | **False alarms** on clean flights (240) | **0** |
 | Broken *parameters* only: must-catch / all (780 / 960 flights) | 780 (100 %) / 843 (88 %) |
 
-- **"Must be caught" was decided before each run, from the fault alone.** It
+- **"Must be caught" had been determined before the run, only from the fault.** It
   applies when the fault pushes something outside its documented range. Isp
-  5 % low must be caught, because no legitimate engine is that far off. Isp
+  5 % low must be caught, because no legitimate engine is actually that far off. Isp
   0.5 % low need not be: real engines scatter ±1 %, and a fault hidden inside
-  that band leaves no evidence in the outputs.
+  that band leaves no evidence in any of the outputs.
 - **Everything that slipped through is a fault smaller than normal scatter**,
   plus one flight whose degrees-as-radians tilt happened to wrap back into
   the valid range (also declared before the run). Detection rises with fault
   size: Isp 0.5 % low was caught 6 / 40 times, 5 % low 40 / 40.
-- **40 more broken flights carried a provably harmless fault.** Removing a
+- **40 more broken flights carried a quantifiably harmless fault.** Removing a
   duplicate throttle clamp left every one of them bit-identical to its clean
   twin.
 - **Both runners agree exactly.** Elodin's own runner and a stand-in runner
   (`harness/mc.py`) give bit-identical trajectories and identical verdicts on
-  all 2,280 flights.
+  all of the 2,280 flights.
 
-## Broken parameters, one at a time
+## Broken parameters
 
 Each row is one parameter broken the way a person plausibly would break it,
 flown across the same 40 dispersed flights.
@@ -63,7 +61,7 @@ How to read the partial rows:
   Isp legitimately varies ±1 % between engines. A 0.5 % fault is caught only
   when it lands a flight's Isp outside that band (6 / 40). By 5 % it's caught
   every time. Every flight whose broken value left the band was caught; every
-  miss is a flight where it didn't.
+  miss is a flight where the band was not left.
 - **Degrees as radians (39 / 40):** the one escape is a flight whose tilt, read
   as radians and wrapped around the circle, happens to land back inside the
   valid start envelope, pointing the right way. That was computed and declared
@@ -82,20 +80,18 @@ The same experiment, with bugs in other layers:
 Two results in that layer are worth noting:
 - **Below sensor noise, nothing is promised.** An altimeter biased 0.5 m / 1 m /
   2 m was caught 0 / 3 / 40 times, against 0.5 m (1σ) noise and a 6σ limit.
-- **Latency the spec permits isn't flagged.** One guidance cycle of command
+- **Latency the spec permits is not flagged.** One guidance cycle of command
   latency is allowed by the spec and caught 0 / 40 times. Two cycles was
   caught 40 / 40.
 
-## What breaking things found
-
-The useful findings weren't all in the scorecard:
+## What breaking things uncovered
 
 1. **A real bug in the unbroken flight software.** In the first frozen run, a
    *clean* control flight failed its landing requirement. Guidance
    re-estimated time-to-go from the current descent rate, so a vehicle that
    slowed down kept pushing its own deadline back. It crept down at 0.8 m/s,
-   65 m up, and was still airborne at the 210 s cap. The checks were right;
-   the design was wrong. Time-to-go now only counts down, and the slowest
+   65 m up, and was still airborne at the 210 s cap. The checks were right but
+   the design was unfortunately wrong. Time-to-go now only counts down, and the slowest
    flight dropped from 169 s to 150 s. That first run is kept in `results/v1/`.
 2. **A run-contract bug that only the official runner exposed.** The first
    `elodin monte-carlo run` marked every flight invalid. The CLI passes each
@@ -105,7 +101,7 @@ The useful findings weren't all in the scorecard:
 3. **Elodin v0.20.0 on macOS needs Homebrew's `ffmpeg@8` at runtime.** The
    `elodin` binary links `/opt/homebrew/opt/ffmpeg@8/lib` and won't start
    without it. `dist-workspace.toml` lists `ffmpeg@8` as a Homebrew build
-   dependency, but the quickstart doesn't mention it.
+   dependency, but the quickstart guide fails to mention it.
 
 ## How it works
 
@@ -168,7 +164,7 @@ the flight's sampled inputs.
   tuning. Check tolerances come from the spec sheet and were set before the
   first run.
 - **Three-valued verdicts.** A check can fail, pass, or *be unable to decide*.
-  "Couldn't decide" never counts as a catch.
+  "Couldn't decide" should never and does not ever count as a catch.
 - **Versions kept, not overwritten.** v1 (`results/v1/`) has its flaw in it;
   v2 is in `results/v2/` (stand-in runner) and `results/v2-cli/` (Elodin's
   runner).
